@@ -144,5 +144,10 @@ public class TripService {
 					return dto;
 				}).collect(Collectors.toList());
 	     }
+	     
+	     @Transactional(readOnly = false)
+	     public int updateSourceAndDestinationByNo(int no,String source,String destination){
+	    	 return tripRepository.updaTripSOurceAndDestinationByTripNo(no, source, destination);
+	     }
 	
 }
